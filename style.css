@@ -1,0 +1,228 @@
+:root {
+    /*Primary Color */
+    --orange-500: hsl(25, 97%, 53%);
+
+    /* Neutral Color */
+    --white:    hsl(0, 100%, 100%);
+    --grey-500: hsl(217, 12%, 63%);
+    --grey-900: hsl(213, 19%, 18%);
+    --grey-950: hsl(216, 12%, 8%);
+
+    /*Font*/
+    --ff: "Overpass", sans-serif;
+    --fw-400: 400;
+    --fw-700: 700; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--grey-950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: var(--ff);
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+/* Container */
+
+.container {
+    background: radial-gradient(
+    circle at top center,
+    hsl(213, 19%, 18%),
+    hsl(216, 12%, 12%)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 325px;
+    max-width: 100%;
+    border-radius: 25px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rating-screen,
+.thankyou-screen {
+    display: none;
+    width: 100%;
+}
+
+/* Rating Screen */
+
+.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rating-star {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: var(--grey-900);
+    border-radius: 50%;
+}
+
+.question {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: var(--fw-700);
+    margin-bottom: 1rem;
+}
+
+.feedback-request {
+    color: var(--grey-500);
+    line-height: 1.5rem;
+    font-weight: var(--fw-400);
+    margin-bottom: 1rem;
+}
+
+/* Thank You Screen */
+
+.thankyou-screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.thankyou-image {
+    margin-bottom: 2rem;
+}
+
+.rating-selected {
+    color: var(--orange-500);
+    background-color: var(--grey-900);
+    font-weight: var(--fw-400);
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.rated-header {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: var(--fw-700);
+    font-size: 1.5rem;
+}
+
+.rated-text {
+    color: var(--grey-500);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+/* Button */
+
+.feedback-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.feedback-button button {
+    background-color: var(--grey-900);
+    color: var(--grey-500);
+    font-size: 1rem;
+    font-weight: var(--fw-700);
+    border-radius: 50%;
+    padding: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feedback-button button:hover {
+    background-color: var(--orange-500);
+    color: var(--grey-950);
+}
+
+.feedback-button button.feedback-button-active {
+    background-color: var(--white) !important;
+    color: var(--grey-950) !important;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--orange-500);
+    padding: 0.8rem;
+    border-radius: 25px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: var(--fw-700);
+    color: var(--grey-950);
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: var(--white);
+}
+
+/* Attribution */
+
+.attribution {
+    color: var(--white);
+}
+
+/* Phone Screen */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    max-width: 325px;
+    padding: 1.5rem;
+  }
+
+  .question,
+  .rated-header {
+    font-size: 1.3rem;
+  }
+
+  .feedback-request,
+  .rated-text {
+    font-size: 0.85rem;
+  }
+
+  .feedback-button {
+    gap: 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .feedback-button button {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .submit {
+    font-size: 0.75rem;
+    padding: 0.7rem;
+  }
+
+  .rating-selected {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .thankyou-image {
+    width: 100px;
+    margin-bottom: 1.5rem;
+  }
+}
